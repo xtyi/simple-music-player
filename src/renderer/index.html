@@ -8,20 +8,46 @@
       rel="stylesheet"
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
     <title>音乐播放器</title>
   </head>
   <body>
-    <div class="container mt-4">
-      <h1>我的播放器</h1>
+    <div class="container main">
+      <h1>音乐播放器</h1>
       <button
-        id="add-music-button"
+        id="add-music-window-button"
         type="button"
         class="btn btn-primary btn-lg btn-block mt-4"
       >
         添加歌曲到曲库
       </button>
+      <div id="music-list" class="mt-4"></div>
     </div>
-
+    <div class="player fixed-bottom">
+      <div class="player-left"></div>
+      <div class="player-middle">
+        <div id="player-status" class="player-status">
+          <div>
+            正在播放:
+          </div>
+          <div>
+            00:00 / 00:00
+          </div>
+        </div>
+        <div class="progress">
+          <div
+            id="player-progress-bar"
+            class="progress-bar bg-danger"
+            role="progressbar"
+          ></div>
+        </div>
+      </div>
+      <div class="player-right"></div>
+    </div>
     <script>
       require('./index.js')
     </script>

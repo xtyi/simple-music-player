@@ -1,10 +1,34 @@
 {
-  "name": "electron-quick-start",
+  "name": "simple-music-player",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "./src/main.js",
   "scripts": {
-    "start": "nodemon --watch ./src --exec electron ."
+    "start": "nodemon --watch ./src --exec electron .",
+    "build": "build"
+  },
+  "build": {
+    "appId": "SimpleMusicPlayer",
+    "productName": "SimpleMusicPlayer",
+    "copyright": "Copyright © 2019 ${author}",
+    "win": {
+      "target": [
+        {
+          "target": "nsis-web",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false
+    }
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,15 +38,19 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Nada",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^5.0.2",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "electron-builder": "^20.44.4"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "electron-store": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "uuid": "^3.3.2"
   }
 }
